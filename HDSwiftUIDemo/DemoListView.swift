@@ -39,6 +39,7 @@ struct LazyView<Content: View>: View {
 
 struct DemoListView: View {
     
+    // 根据字符串动态的创建二级页面
     @State private var demoList: [DemoItem] = [
         DemoItem(name: .observable),
         DemoItem(name: .observable),

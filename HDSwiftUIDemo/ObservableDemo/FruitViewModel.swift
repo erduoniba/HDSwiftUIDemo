@@ -8,6 +8,25 @@
 import Foundation
 import SwiftUI
 
+/*
+ MARK1：
+ 如何使用 objectWillChange 手动发送状态更新？
+ https://wangchujiang.com/swiftui-example/advanced-state/demo5/index.html
+ */
+
+// MARK1
+class UserAuthentication: ObservableObject {
+    var username = "Taylor" {
+        willSet {
+            if username == "xxx" {
+                // 手动执行状态的刷新
+                objectWillChange.send()
+            }
+        }
+    }
+    @Published var nickName: String = ""
+}
+
 struct FruitModel: Identifiable, Hashable {
     let id: String = UUID().uuidString
     let name: String

@@ -27,6 +27,8 @@ struct ObservableDemo: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @StateObject var user = UserAuthentication()
+    
     var body: some View {
         
         List {
@@ -52,6 +54,18 @@ struct ObservableDemo: View {
                 fruitViewModel.delete(indexSet: indexSet)
             })
             
+            VStack(alignment: .leading) {
+                TextField("Enter your name", text: $user.username)
+                Text("Your username is: \(user.username)")
+            }
+            .padding(20)
+            
+            VStack(alignment: .leading) {
+                TextField("Enter your nickname", text: $user.nickName)
+                Text("Your nickname is: \(user.nickName)")
+            }
+            .padding(20)
+            
         }
         // MARK1
         .navigationTitle("ObservableDemo")
@@ -64,6 +78,8 @@ struct ObservableDemo: View {
         .onAppear(perform: {
             fruitViewModel.getFruits()
         })
+        
+
         
     }
 }
