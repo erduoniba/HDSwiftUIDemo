@@ -57,7 +57,7 @@ struct DemoListView: View {
             }
             .navigationBarTitle("DemoListView", displayMode: .inline)
         }
-        
+        .navigationViewStyle(.stack)
     }
     
 }

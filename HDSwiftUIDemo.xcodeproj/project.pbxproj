@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9109F972B8EC1E90070CA5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9109F952B8EC1E90070CA5D /* Model.xcdatamodeld */; };
 		D999D2022B849F940068A17E /* HDSwiftUIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D999D2012B849F940068A17E /* HDSwiftUIDemoApp.swift */; };
 		D999D2042B849F940068A17E /* DemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D999D2032B849F940068A17E /* DemoListView.swift */; };
 		D999D2062B849F980068A17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D999D2052B849F980068A17E /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9109F962B8EC1E90070CA5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D9109FB92B8F11530070CA5D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D999D1FE2B849F940068A17E /* HDSwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDSwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D999D2012B849F940068A17E /* HDSwiftUIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDSwiftUIDemoApp.swift; sourceTree = "<group>"; };
 		D999D2032B849F940068A17E /* DemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListView.swift; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 				D999D2032B849F940068A17E /* DemoListView.swift */,
 				D999D2052B849F980068A17E /* Assets.xcassets */,
 				D999D2072B849F980068A17E /* Preview Content */,
+				D9109F952B8EC1E90070CA5D /* Model.xcdatamodeld */,
+				D9109FB92B8F11530070CA5D /* PrivacyInfo.xcprivacy */,
 			);
 			path = HDSwiftUIDemo;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			files = (
 				D999D2042B849F940068A17E /* DemoListView.swift in Sources */,
 				D999D2132B84A75C0068A17E /* FruitViewModel.swift in Sources */,
+				D9109F972B8EC1E90070CA5D /* Model.xcdatamodeld in Sources */,
 				D999D2022B849F940068A17E /* HDSwiftUIDemoApp.swift in Sources */,
 				D999D2112B84A26C0068A17E /* ObservableDemo.swift in Sources */,
 			);
@@ -358,6 +364,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D9109F952B8EC1E90070CA5D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9109F962B8EC1E90070CA5D /* Model.xcdatamodel */,
+			);
+			currentVersion = D9109F962B8EC1E90070CA5D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D999D1F62B849F940068A17E /* Project object */;
 }
