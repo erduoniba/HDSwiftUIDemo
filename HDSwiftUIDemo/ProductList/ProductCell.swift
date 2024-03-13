@@ -29,6 +29,7 @@ struct ProductCell: View {
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
+            .frame(width: 100)
             .modifier(ConditionalPadding(product: product))
 
             VStack(alignment: .leading) {
