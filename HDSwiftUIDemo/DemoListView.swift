@@ -9,12 +9,18 @@ import SwiftUI
 
 enum ViewType: String {
     case observable = "ObservableDemo"
+    case productList = "ProductListDemo"
+    case systemFontSizeView = "SystemFontSizeView"
     
     @ViewBuilder
     func view() -> some View {
         switch self {
         case .observable:
             ObservableDemo()
+        case .productList:
+            ProductListDemo()
+        case .systemFontSizeView:
+            SystemFontSizeView()
         }
     }
 }
@@ -42,8 +48,8 @@ struct DemoListView: View {
     // 根据字符串动态的创建二级页面
     @State private var demoList: [DemoItem] = [
         DemoItem(name: .observable),
-        DemoItem(name: .observable),
-        DemoItem(name: .observable)
+        DemoItem(name: .productList),
+        DemoItem(name: .systemFontSizeView)
     ]
     
     var body: some View {

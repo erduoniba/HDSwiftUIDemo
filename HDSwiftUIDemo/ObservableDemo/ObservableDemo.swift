@@ -5,12 +5,6 @@
 //  Created by denglibing on 2024/2/20.
 //
 
-/*
- MARK1
- 页面跳转和导航设置
- https://www.jianshu.com/p/dced1c3c9086
- */
-
 import SwiftUI
 
 struct ObservableDemo: View {
@@ -67,14 +61,7 @@ struct ObservableDemo: View {
             .padding(20)
             
         }
-        // MARK1
-        .navigationTitle("ObservableDemo")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Image(systemName: "chevron.backward")
-        }))
+        .hdNavigationBar(title: "ObservableDemo")
         .onAppear(perform: {
             fruitViewModel.getFruits()
         })
