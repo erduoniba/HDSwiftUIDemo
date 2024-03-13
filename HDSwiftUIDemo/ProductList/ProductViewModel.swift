@@ -40,7 +40,7 @@ class ProductViewModel: ObservableObject {
         guard let path = Bundle.main.url(forResource: "ProductList", withExtension: "json") else { return }
         guard let data = try? Data(contentsOf: path) else { return }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.isLoadingMore = true
             
             let decode = JSONDecoder()

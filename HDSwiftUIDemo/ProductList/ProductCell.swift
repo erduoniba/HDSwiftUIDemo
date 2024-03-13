@@ -7,16 +7,36 @@
 
 import SwiftUI
 
+extension View {
+    @ViewBuilder
+    func applyIf<Content: View>(_ condition: Bool, apply: (Self) -> Content) -> some View {
+        if condition {
+            apply(self)
+        }
+        else {
+            self
+        }
+    }
+    
+    func lazyViewModifier(product: ProductModel) -> some View {
+        self.modifier(ConditionalPadding(product: product))
+    }
+}
 
 struct ConditionalPadding: ViewModifier {
     var product: ProductModel
-
+    
     func body(content: Content) -> some View {
-        if product.imageurl.isEmpty {
-            content.padding(20)
-        } else {
-            content
-        }
+        content
+            .applyIf(!product.imageurl.isEmpty) { view in
+                view.padding(15)
+            }
+            .applyIf(!product.wname.isEmpty) { view in
+                view.border(Color.blue, width: 10)
+            }
+            .applyIf(product.wareId == "10081941266550") { view in
+                view.border(Color.red, width: 10)
+            }
     }
 }
 
@@ -30,8 +50,8 @@ struct ProductCell: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
             .frame(width: 100)
-            .modifier(ConditionalPadding(product: product))
-
+            .lazyViewModifier(product: product)
+            
             VStack(alignment: .leading) {
                 Text(product.wname)
                     .font(.subheadline)
@@ -63,7 +83,7 @@ struct ProductCell: View {
                         .font(.title)
                         .foregroundStyle(.red)
                 }
-                                
+                
                 HStack(spacing: 0) {
                     Text(product.reviews + "  ")
                         .font(.caption)
