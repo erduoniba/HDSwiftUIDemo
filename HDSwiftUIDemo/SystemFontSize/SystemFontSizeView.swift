@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/*
+ 官方系统字体大小参考：
+ https://developer.apple.com/design/human-interface-guidelines/typography
+ */
+
 struct SystemFontSizeView: View {
     var body: some View {
         List {
@@ -41,17 +46,17 @@ extension Font.TextStyle: CustomStringConvertible {
     
     public var description: String {
         switch self {
-        case .largeTitle: return "Large Title（大标题）"
-        case .title: return "Title（1级标题）"
-        case .title2: return "Title 2（2级标题）"
-        case .title3: return "Title 3（3级标题）"
-        case .headline: return "Headline（标题文本）"
-        case .subheadline: return "Subheadline（副标题文本）"
-        case .body: return "Body（文本样式）"
-        case .callout: return "Callout（注解文本）"
-        case .footnote: return "Footnote（脚注文本）"
-        case .caption: return "Caption（1级说明文字）"
-        case .caption2: return "Caption 2（2级说明文字）"
+        case .largeTitle: return "Large Title（大标题 34）"
+        case .title: return "Title（1级标题 28）"
+        case .title2: return "Title 2（2级标题 22）"
+        case .title3: return "Title 3（3级标题 20）"
+        case .headline: return "Headline（标题文本 17bold）"
+        case .subheadline: return "Subheadline（副标题文本 15）"
+        case .body: return "Body（文本样式 17）"
+        case .callout: return "Callout（注解文本 16）"
+        case .footnote: return "Footnote（脚注文本 13）"
+        case .caption: return "Caption（1级说明文字 12）"
+        case .caption2: return "Caption 2（2级说明文字 11）"
         default: return "\(self)"
         }
     }
